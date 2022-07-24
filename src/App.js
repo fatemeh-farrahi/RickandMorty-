@@ -1,11 +1,16 @@
-import './App.css';
-import Location from "./component/locations"
+import "./App.css";
+import Header from "./component/header";
+import RouterComponent from "./router";
+import { BrowserRouter } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <header className="App-header text-primary">
-       <Location/>
-      </header>
+      <BrowserRouter>
+        <div className="d-flex flex-column">
+          <Header />
+          <RouterComponent />
+        </div>
+      </BrowserRouter>
     </div>
   );
 }
