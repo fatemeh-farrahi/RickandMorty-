@@ -1,7 +1,13 @@
 import axios from "axios";
-const fecthAllLocation = async () => {
-  await axios.get(`https://rickandmortyapi.com/api/location`).then((result) => {
-    return result.data.results;
-  });
+export const fecthAllLocation = async () => {
+  return await axios
+    .get(`https://rickandmortyapi.com/api/location`)
+    .then((result) => result.data)
+    .catch((error) => Promise.reject(error.response));
 };
-export default fecthAllLocation;
+export const filterLocation = async (phrase) => {
+  return await axios
+    .get(`https://rickandmortyapi.com/api/location/?name=${phrase}`)
+    .then((result) => result.data)
+    .catch((error) => Promise.reject(error.response));
+};

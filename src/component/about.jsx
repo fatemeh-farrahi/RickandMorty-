@@ -1,13 +1,15 @@
-import React from "react";
+import { useMemo } from "react";
 
-const About = () => {
-  return (
-    <div className="bg-white text-primary d-flex  w-100 flex-wrap align-items-center justify-content-center">
-      <div className=" d-flex w-25 card m-3">
-        <div className="card-header"> about</div>
-      </div>
-    </div>
-  );
-};
+export default function About() {
+  const list = [
+    { key: 1, value: 10 },
+    { key: 2, value: 20 },
+    { key: 3, value: 30 },
+  ];
 
-export default About;
+  const renderedList = useMemo(() => {
+    return list.map(({ key, value }) => <div key={key}>{value}</div>);
+  }, [list]);
+
+  return <div>{renderedList}</div>;
+}

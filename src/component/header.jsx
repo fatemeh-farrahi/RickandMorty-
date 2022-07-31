@@ -13,6 +13,12 @@ function Header() {
         <Link className="nav" to="about">
           <li class="nav-item">About</li>
         </Link>
+        <Link className="nav" to="count">
+          <li class="nav-item">Count</li>
+        </Link>
+        <Link className="nav" to="counter">
+          <li class="nav-item">Counter</li>
+        </Link>
       </div>
     </div>
   );
